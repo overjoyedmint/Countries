@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "nunito sans";
+}
+
+body,
+html {
+  height: auto;
+  width: 100%;
+  position: relative;
+  min-width:1000px;
+ 
+}
+
+/* uppermost header */
+#header {
+  height: 80px;
+
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px rgb(228, 228, 228);
+
+  padding: 0 60px 0 60px;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#mode {
+  margin-left: 8px;
+  border: brown 2px solid;
+  height: 20px;
+  display: block;
+ background-color: inherit;
+ outline: none;
+ color: inherit;
+ border: none;
+font-weight: 900;
+cursor: pointer;
+}
+
+#modes {
+  margin-left: 200px;
+  display: flex; 
+}
+
+#title {
+  font-size: 20px;
+}
+
+
+
+
+/* input & region filter */
+#search-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center;
+  position: relative;
+ 
+  height: 140px;
+}
+
+#glass {
+  height: 50px;
+  width: 30px;
+  border: none;
+  background-color: inherit;
+color: gray;
+  position: absolute;
+  left: 1%;
+}
+
+#country-search {
+  height: 50px;
+  width: 400px;
+  box-shadow: 0px 0px 5px rgb(228, 228, 228);
+  padding: 10px;
+  padding-left: 15%;
+  border: none;
+  background-color: hsl(0, 0%, 100%);
+  
+  outline: none;
+
+}
+
+
+
+::placeholder {
+  font-weight: 700;
+  font-size: larger
+}
+
+input{
+  color: gray;
+  font-weight: 700;
+}
+
+#region-select {
+  height: 50px;
+  width: 200px;
+  padding: 10px;
+
+  background-color: hsl(0, 0%, 100%);
+  font-size: 15px;
+  border: none;
+  box-shadow: 0px 0px 5px rgb(212, 212, 212);
+}
+
+select:valid { 
+  color:rgb(143, 142, 142);
+  font-weight: 600;
+  
+ }
+
+ 
+
+#region-select.dark, #country-search.dark {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 0px 10px rgb(31, 44, 46);
+}
+
+
+/* main */
+#main {
+  padding: 0 60px 60px 60px;
+  background-color: hsl(0, 0%, 98%);
+  position: relative;
+  height: 100%;
+}
+
+#country-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-around;
+}
+
+
+.country:hover {
+  transform: scale(1.04);
+}
+
+/* flag & country-info design */
+.flag {
+  /* background-image: url("https://restcountries.eu/data/deu.svg");
+  background-position: center;
+  background-size: cover;
+  height: 180px; */
+}
+
+img {
+  background-size: cover;
+  height: 180px;
+  width: 280px;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 280px;
+  color: rgb(28, 31, 56);
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  box-shadow: 0px 0px 30px rgb(228, 228, 228);
+  cursor: pointer;
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  padding: 20px;
+
+  justify-content: space-evenly;
+}
+
+/* shadow */
+.shadow {
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.active.shadow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 0%, 70%);
+  opacity: 0.9;
+  z-index: 10;
+}
+
+/* modal main */
+
+.modal {
+  height: 80%;
+  width: 80%;
+  background-color: aliceblue;
+  position: fixed;
+color: black;
+  top: 12%;
+  bottom: 50%;
+  right: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+
+  overflow: hidden;
+
+  z-index: 15;
+}
+
+/* close button */
+
+.close {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  font-size: 30px;
+  color: inherit;
+background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+/* modal info styling */
+
+.modall {
+  margin-top: 190px;
+  display: flex;
+  flex-direction: row;
+ color: inherit;
+ 
+ justify-self: center;
+ text-align: center;
+  height: 65%;
+  width: 45%;
+
+  padding: 2%;
+}
+
+.leftSmall{
+
+  left: 50px;
+  top: 20px
+}
+
+.modall img {
+  min-height: 600px;
+  width:50%;
+  position: absolute;
+  left: 30px;
+  top: 80px;
+}
+.title {
+  margin-bottom: 50px;
+  
+  text-align: center;
+}
+
+.left {
+  background-size: cover;
+  margin-bottom: 160px;
+
+  
+}
+
+.right {
+  
+  margin-top: -100px;
+
+  height: 65%;
+  width: 400px;
+  position: absolute;
+ 
+  right: 220px;
+}
+
+
+.leftSmall > *,
+.rightSmall > * {
+  margin-bottom: 15px;
+}
+
+.modal.inactive {
+  display: none;
+}
+
+/* dark mode */
+#main.dark {
+  background-color: hsl(207, 26%, 17%);
+}
+
+#header.dark {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 0px 5px rgb(228, 228, 228);
+  color: aliceblue;
+}
+
+.modal.dark{
+ background-color:hsl(209, 23%, 22%);;
+ color: aliceblue;
+}
+
+.country.dark{
+  
+  color: aliceblue;
+
+}
+
+#country-list.dark > div {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 0px 10px rgb(13, 21, 22);
+  color: aliceblue;
+}
+
+
+
+
+select:valid { 
+  color:rgb(143, 142, 142);
+  font-weight: 600
+ }
+
